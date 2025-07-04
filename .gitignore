@@ -1,0 +1,8 @@
+## Carpeta de dependencias de Composer
+/vendor/
+
+## Archivo de bloqueo de Composer, opcional pero recomendado ignorar en este caso
+composer.lock
+
+## Archivos de configuración local o de entorno (si los tuvieras)
+.env
