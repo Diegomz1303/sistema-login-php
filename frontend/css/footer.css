@@ -1,0 +1,81 @@
+/* === ESTILOS PARA EL FOOTER === */
+
+.site-footer {
+    background-color: #2c3e50; /* Fondo oscuro */
+    color: #a7a7a7; /* Texto gris claro */
+    padding: 40px 0 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h2 {
+    color: #fff; /* Títulos en blanco */
+    margin-bottom: 20px;
+}
+
+.footer-section.about .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo-text span {
+    color: var(--secondary-color); /* Color de acento para una parte del logo */
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.footer-section .socials a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.links a {
+    display: block;
+    color: #a7a7a7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.footer-section.links a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-section.contact span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-section.contact span i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    background-color: #232a31;
+    color: #686868;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}

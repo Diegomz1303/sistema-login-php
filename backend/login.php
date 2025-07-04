@@ -1,12 +1,9 @@
 <?php
-
-
+// backend/login.php
 
 session_start();
 
-
 require_once 'db_connect.php';
-
 
 header('Content-Type: application/json');
 
@@ -20,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $response['message'] = 'Correo y contraseña son obligatorios.';
     } else {
         
-        $sql = "SELECT id, nombre, password FROM usuarios WHERE email = ?";
+        // 1. Modificamos la consulta para incluir el 'rol'
+        $sql = "SELECT id, nombre, password, rol FROM usuarios WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -30,15 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             $user = $result->fetch_assoc();
             
-            
             if (password_verify($password, $user['password'])) {
                 
                 $response['success'] = true;
                 $response['message'] = 'Inicio de sesión exitoso.';
 
-                
+                // 2. Guardamos todos los datos del usuario en la sesión
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['nombre'];
+                $_SESSION['user_rol'] = $user['rol']; // <-- CAMBIO AQUÍ
                 
             } else {
                 

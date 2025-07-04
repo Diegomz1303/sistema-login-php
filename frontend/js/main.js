@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.success) {
                 
                 
-                window.location.href = 'dashboard.php';
+                window.location.href = 'tienda.php';
             } else {
                
                 responseMessage.textContent = data.message;
